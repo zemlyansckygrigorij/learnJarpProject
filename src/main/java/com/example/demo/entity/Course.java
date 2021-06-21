@@ -3,6 +3,9 @@ package com.example.demo.entity;
 import java.util.Objects;
 
 public class Course {
+    public Course() {
+    }
+
     private int id;
     private String name;
     private double cost;
