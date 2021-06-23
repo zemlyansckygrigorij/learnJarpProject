@@ -1,15 +1,15 @@
 package com.example.demo.entity;
 
 public enum Gender {
-    MALE  {
+    man  {
         public String toString() {
-            return "male";
+            return "man";
         }
     }
 
-        ,FEMALE  {
+        ,women {
         public String toString() {
-            return "female";
+            return "women";
         }
     }
 }
