@@ -1,13 +1,17 @@
 package com.example.demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
+@TypeDef(
+        name = "pgsql_enum",
+        typeClass = PostgreSQLEnumType.class
+)
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -18,7 +22,10 @@ public class Student {
     private String lastName;
     private Date dateBirthday;
     private String address;
-    private boolean marriage;
+    private boolean married;
+
+    @Enumerated(EnumType.STRING)
+    @Type( type = "pgsql_enum" )
     private Gender gender;
 
     public Student() {
@@ -29,12 +36,12 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return id == student.id && marriage == student.marriage && Objects.equals(firstName, student.firstName) && Objects.equals(secondName, student.secondName) && Objects.equals(lastName, student.lastName) && Objects.equals(dateBirthday, student.dateBirthday) && Objects.equals(address, student.address) && gender == student.gender;
+        return id == student.id && married == student.married && Objects.equals(firstName, student.firstName) && Objects.equals(secondName, student.secondName) && Objects.equals(lastName, student.lastName) && Objects.equals(dateBirthday, student.dateBirthday) && Objects.equals(address, student.address) && gender == student.gender;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, secondName, lastName, dateBirthday, address, marriage, gender);
+        return Objects.hash(id, firstName, secondName, lastName, dateBirthday, address, married, gender);
     }
 
     @Override
@@ -46,7 +53,7 @@ public class Student {
                 ", lastName='" + lastName + '\'' +
                 ", dateBirthday=" + dateBirthday +
                 ", address='" + address + '\'' +
-                ", marriage=" + marriage +
+                ", marriage=" + married +
                 ", gender=" + gender +
                 '}';
     }
@@ -100,11 +107,11 @@ public class Student {
     }
 
     public boolean isMarriage() {
-        return marriage;
+        return married;
     }
 
     public void setMarriage(boolean marriage) {
-        this.marriage = marriage;
+        this.married = marriage;
     }
 
     public Gender getGender() {
