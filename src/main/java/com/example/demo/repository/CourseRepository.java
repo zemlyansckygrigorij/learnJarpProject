@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface CourseRepository extends JpaRepository<Course,Integer> {
-    @Query("SELECT e FROM Course e WHERE e.name = :name")
-    public Optional getCourseByName(@Param("name") String name);
+    /*@Query("SELECT e FROM Course e WHERE e.name = :name")
+    public Optional getCourseByName(@Param("name") String name);*/
 }
