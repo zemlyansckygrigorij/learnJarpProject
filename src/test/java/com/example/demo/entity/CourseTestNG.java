@@ -4,7 +4,7 @@ package com.example.demo.entity;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
-class CourseTestNG {
+public class CourseTestNG {
     @Test
     public void makeTest() throws Exception {
         Course course = new Course();
