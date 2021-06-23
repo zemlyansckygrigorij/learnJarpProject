@@ -1,5 +1,8 @@
 package com.example.demo.repository;
 
-public interface SubjectRepository {
+import com.example.demo.entity.Subject;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SubjectRepository  extends JpaRepository<Subject,Integer> {
 
 }
