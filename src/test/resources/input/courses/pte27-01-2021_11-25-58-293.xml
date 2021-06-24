@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+    <course>
+        <id>1</id>
+        <name>Math</name>
+        <cost>12.3</cost>
+        <duration>123</duration>
+    </course>
+    <course>
+        <id>2</id>
+        <name>Geography</name>
+        <cost>15.3</cost>
+        <duration>1234</duration>
+    </course>
+    <course>
+        <id>3</id>
+        <name>Arabic</name>
+        <cost>15.3</cost>
+        <duration>124</duration>
+    </course>
+    <course>
+        <id>4</id>
+        <name>Latin</name>
+        <cost>12.3</cost>
+        <duration>123</duration>
+    </course>
+</root>
