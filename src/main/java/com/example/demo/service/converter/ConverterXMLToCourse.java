@@ -1,7 +1,6 @@
 package com.example.demo.service.converter;
 
 import com.example.demo.entity.Course;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -15,7 +14,13 @@ import java.util.List;
 
 
 public class ConverterXMLToCourse {
+
     private String path;
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
     private List<Course> listCourses = new ArrayList<>();
     public String getPath() {
         return path;
@@ -28,7 +33,7 @@ public class ConverterXMLToCourse {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
             doc.getDocumentElement().normalize();
-            NodeList nCourse = doc.getElementsByTagName("courses");
+            NodeList nCourse = doc.getElementsByTagName("course");
 
             for(int i =0;i<nCourse.getLength();i++){
                 Course course = new Course();
