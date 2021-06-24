@@ -14,13 +14,13 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class ConverterXMLToCourseTest {
     @Value("${spring.dir.courses}")
-    private String parth;
+    private String path;
 
 
     @Test
     public void makeTest(){
 
-        ConverterXMLToCourse converter = new ConverterXMLToCourse(parth);
+        ConverterXMLToCourse converter = new ConverterXMLToCourse(path);
         List<Course> courses = converter.getListCourses() ;
         assertEquals(4,courses.size());
     }
