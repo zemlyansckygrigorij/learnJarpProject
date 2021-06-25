@@ -22,7 +22,16 @@ public class Teacher {
 
     public Teacher() {
     }
-
+    public Teacher(TeacherXML teacher) {
+        this.id = teacher.getId();
+        this.firstName = teacher.getFirstName();
+        this.secondName = teacher.getSecondName();
+        this.lastName = teacher.getLastName();
+        this.dateBirth = teacher.getDateBirth();
+        this.address = teacher.getAddress();
+        this.qualification = teacher.getQualification();
+        this.biography = teacher.getBiography();
+    }
     @Override
     public String toString() {
         return "Teacher{" +
