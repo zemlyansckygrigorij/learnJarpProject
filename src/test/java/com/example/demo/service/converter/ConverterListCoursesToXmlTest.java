@@ -5,6 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,5 +32,10 @@ class ConverterListCoursesToXmlTest {
 
         assertEquals(coursesOut.size(),courses.size());
         assertTrue(coursesOut.containsAll(courses));
+        try {
+            Files.deleteIfExists( Paths.get(pathOut));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
