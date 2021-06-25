@@ -12,7 +12,7 @@ import java.util.Date;
 *
 * */
 @XmlRootElement(name = "book")
-@XmlType(propOrder = { "id", "firstName", "secondName" , "lastName", "dateBirt", "address", "qualification"})
+@XmlType(propOrder = { "id", "firstName", "secondName" , "lastName", "dateBirth", "address", "qualification"})
 public class TeacherXML {
     public TeacherXML() {
     }
